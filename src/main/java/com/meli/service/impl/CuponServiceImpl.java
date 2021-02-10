@@ -110,17 +110,17 @@ public class CuponServiceImpl implements CuponService {
 	 * @return
 	 */
 	private List<Entry<String, Float>> OrdenarMapa(Map<String, Float> items) {
-		List<Map.Entry<String, Float>> students = new ArrayList<Map.Entry<String, Float>>();
-		students.addAll(items.entrySet());
+		List<Map.Entry<String, Float>> itemsOrdenados = new ArrayList<Map.Entry<String, Float>>();
+		itemsOrdenados.addAll(items.entrySet());
 
-		Collections.sort(students, new Comparator<Map.Entry<String, Float>>() {
+		Collections.sort(itemsOrdenados, new Comparator<Map.Entry<String, Float>>() {
 			@Override
 			public int compare(Map.Entry<String, Float> o1, Map.Entry<String, Float> o2) {
 				return o1.getValue().compareTo(o2.getValue());
 			}
 		});
 
-		return students;
+		return itemsOrdenados;
 	}
 
 	/**
